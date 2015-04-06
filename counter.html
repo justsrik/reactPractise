@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src="http://fb.me/react-0.13.1.js"></script>
+		<script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+	</head>
+	<body>
+
+	<script type="text/jsx">
+
+		var Counter =  React.createClass({
+
+		getInitialState :function(){
+
+			return {count:1};
+		},
+
+		add: function(){
+			
+			//alert("yo");
+
+			this.setState({count:this.state.count+1});
+
+
+
+		},
+		subtract:function(){
+
+			//alert("yo");
+			var count = this.state.count -1;
+			if(count<1){
+				count=0;
+			}
+			this.setState({	count:count});
+		},
+
+		render: function(){
+				return (
+					<div>
+					<h1>Counter:{this.state.count}</h1>
+					<button onClick={this.add}>add 1</button>
+					<button onClick={this.subtract}>subtract 1</button>
+					</div>);
+			}
+
+		});
+
+		React.render(<Counter />, document.body);
+
+	</script>
+
+
+
+</body>
+
+</html>

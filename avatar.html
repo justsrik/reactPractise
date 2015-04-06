@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="http://fb.me/react-0.13.1.js"></script>
+		<script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+	</head>
+	<body>
+	
+		<script type="text/jsx">
+
+		var Avatar =  React.createClass({
+
+			getDefaultProps:function(){
+				return {
+
+					path:"https://pbs.twimg.com/profile_images/2670057182/f08dd1149279c23f8e01eeafe810b298.jpeg"
+					}
+
+				
+
+			},
+
+			render: function(){
+				return (<div>
+				<a href={this.props.path}>
+				<img src={this.props.path} />
+				</a>
+				</div>);
+			}
+
+		});
+
+		React.render(<Avatar />, document.body);
+
+		</script>
+
+
+
+</body>
+
+</html>

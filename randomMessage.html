@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script src="http://fb.me/react-0.13.1.js"></script>
+		<script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+	</head>
+	<body>
+	
+		<script type="text/jsx">
+
+		var RandomMessage =  React.createClass({
+
+			getInitialState: function(){
+			return {
+			message:"Hello Universe"
+			}
+			},
+			_onClick:function(){
+			var messages = ["Hello World","Hello Planet","Hello Universe"];
+			var actualMessage = messages[Math.floor(Math.random()*3)];
+			this.setState({message:actualMessage});	
+			},
+			render: function(){
+				return (<div>
+					<MessageView msg={this.state.message}/>
+					<button onClick = {this._onClick}>ClickMe!</button>
+					</div>);
+			}
+
+		});
+
+		var MessageView = React.createClass({
+			render: function(){
+			return(
+				<p>{this.props.msg}</p>
+				)
+}
+		});
+
+		React.render(<RandomMessage />, document.body);
+
+		</script>
+
+
+
+</body>
+
+</html>
